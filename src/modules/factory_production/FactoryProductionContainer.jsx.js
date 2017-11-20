@@ -3,16 +3,16 @@
  */
 import React from 'react';
 
-class MapContainer extends React.Component {
+class FactoryProductionContainer extends React.Component {
 	render() {
 		return (
 			<div>
 				<div>
-					I`am map view
+					I`am FactoryProduction view
 				</div>
 			</div>
 		)
 	}
 }
 
-export default MapContainer
+export default FactoryProductionContainer

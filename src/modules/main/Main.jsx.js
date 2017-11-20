@@ -3,16 +3,13 @@
  */
 import React from 'react';
 
-class MapContainer extends React.Component {
+class MainContainer extends React.Component {
 	render() {
 		return (
 			<div>
-				<div>
-					I`am map view
-				</div>
+				Welcome to VizualExstasy project!
 			</div>
 		)
 	}
 }
-
-export default MapContainer
+export default MainContainer

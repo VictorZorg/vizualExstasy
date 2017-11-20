@@ -1,6 +1,7 @@
 {
   "name": "VizualExstasy",
-  "version": "1",
+  "version": "1.0.4",
+  "description": "Visualization project",
   "main": "''",
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
