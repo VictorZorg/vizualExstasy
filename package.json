@@ -1,7 +1,6 @@
 {
-  "name": "react-webpack-babel",
-  "version": "0.0.4",
-  "description": "React Webpack Babel Starter Kit",
+  "name": "VizualExstasy",
+  "version": "1",
   "main": "''",
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
@@ -12,11 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alicoding/react-webpack-babel"
+    "url": "https://github.com/VictorZorg/vizualExstasy.git"
   },
-  "author": "Ali Al Dallal",
+  "author": "VizualExstasy",
   "license": "MIT",
-  "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
     "node-sass": "^4.3.0",
     "normalize.css": "^7.0.0",
