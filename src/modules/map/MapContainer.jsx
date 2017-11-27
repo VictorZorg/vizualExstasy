@@ -7,7 +7,7 @@ class MapContainer extends React.Component {
 	render() {
 		return (
 			<div>
-				<div>
+				<div className="zzz">
 					I`am map view
 				</div>
 			</div>
