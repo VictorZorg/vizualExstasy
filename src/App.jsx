@@ -16,11 +16,13 @@ export default class App extends React.Component {
 		return (
 			<div>
 				<Header/>
-				<Switch>
-					<Route exact path='/' component={MainContainer}/>
-					<Route path='/map' component={MapContainer}/>
-					<Route path='/factory' component={FactoryProductionContainer}/>
-				</Switch>
+				<div className="content-container">
+					<Switch>
+						<Route exact path='/' component={MainContainer}/>
+						<Route path='/map' component={MapContainer}/>
+						<Route path='/factory' component={FactoryProductionContainer}/>
+					</Switch>
+				</div>
 			</div>
 		)
 	}

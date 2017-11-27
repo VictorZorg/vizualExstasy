@@ -6,8 +6,8 @@ import React from 'react';
 class FactoryProductionContainer extends React.Component {
 	render() {
 		return (
-			<div>
-				<div>
+			<div className="factory-container">
+				<div className="factory-header">
 					I`am FactoryProduction view
 				</div>
 			</div>

@@ -6,8 +6,11 @@ import React from 'react';
 class MainContainer extends React.Component {
 	render() {
 		return (
-			<div>
+			<div className="main-container">
 				Welcome to VizualExstasy project!
+				<div className="logo">
+
+				</div>
 			</div>
 		)
 	}

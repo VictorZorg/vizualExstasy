@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 class Header extends React.Component {
 	render() {
 		return (
-			<header>
-				<nav>
+			<header className="header">
+				<nav className="header-menu">
 					<ul>
 						<li><Link to='/'>Home</Link></li>
 						<li><Link to='/map'>Map</Link></li>
