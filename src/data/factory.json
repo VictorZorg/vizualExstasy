@@ -1,0 +1,17 @@
+{
+  "name": "Factory",
+  "id": 101,
+  "country": "Rus` matushka",
+  "size": 1,
+  "location": {
+    "x": 1,
+    "y": 1
+  },
+  "color": "#fff",
+  "quotes": {
+    "Vasya": "Davai rabotai",
+    "Vladimir": "Ushitsya i ischo raz uchitsya"
+  }
+//  Сюда через запятую другие любые данные
+//  Типа спонсор, год основания, заработок и прочее
+}
