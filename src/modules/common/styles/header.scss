@@ -1,5 +1,19 @@
 .header {
-  .header-menu {
-    list-style: disc;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  height: 5%;
+
+  .header-link {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    border: 1px black solid;
+    box-sizing: border-box;
+    a {
+      width: 100%;
+      text-align: center;
+    }
   }
 }

@@ -14,9 +14,9 @@ import FactoryProductionContainer from './modules/factory_production/FactoryProd
 export default class App extends React.Component {
 	render() {
 		return (
-			<div>
-				<Header/>
+			<div className="app-container">
 				<div className="content-container">
+					<Header/>
 					<Switch>
 						<Route exact path='/' component={MainContainer}/>
 						<Route path='/map' component={MapContainer}/>

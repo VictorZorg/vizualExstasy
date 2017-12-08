@@ -1,21 +1,23 @@
 /**
  * Created by ZAITNIK on 20.11.2017.
  */
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React from "react";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component {
 	render() {
 		return (
-			<header className="header">
-				<nav className="header-menu">
-					<ul>
-						<li><Link to='/'>Home</Link></li>
-						<li><Link to='/map'>Map</Link></li>
-						<li><Link to='/factory'>factory</Link></li>
-					</ul>
-				</nav>
-			</header>
+			<div className="header">
+				<div className="header-link">
+					<Link to='/'>Home</Link>
+				</div>
+				<div className="header-link">
+					<Link to='/map'>Map</Link>
+				</div>
+				<div className="header-link">
+					<Link to='/factory'>factory</Link>
+				</div>
+			</div>
 		)
 	}
 }

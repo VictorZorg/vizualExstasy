@@ -1,4 +1,12 @@
 .content-container {
   display: flex;
   flex: 1;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-container {
+  max-height: 100vh;
+  overflow: visible;
+  color: black;
 }
