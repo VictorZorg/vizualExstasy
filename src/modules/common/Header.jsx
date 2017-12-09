@@ -9,13 +9,19 @@ class Header extends React.Component {
 		return (
 			<div className="header">
 				<div className="header-link">
-					<Link to='/'>Home</Link>
+					<Link to='/'>
+						Home
+					</Link>
 				</div>
 				<div className="header-link">
-					<Link to='/map'>Map</Link>
+					<Link to='/map'>
+						Map
+					</Link>
 				</div>
 				<div className="header-link">
-					<Link to='/factory'>factory</Link>
+					<Link to='/factory'>
+						Factory
+					</Link>
 				</div>
 			</div>
 		)

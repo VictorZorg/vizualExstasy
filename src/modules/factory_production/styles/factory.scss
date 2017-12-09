@@ -9,26 +9,27 @@
 
   .factory-header {
     display: flex;
-    background: gray;
-    flex: 1;
+    height: 10%;
+    margin-bottom: 1%;
     .header-element {
       align-items: center;
     }
     .quote {
-      background: yellow;
       display: flex;
       flex: 9;
+      justify-content: flex-start;
+      padding-left: 5%;
     }
     .author {
-      background: indianred;
       display: flex;
       flex: 1;
+      justify-content: center;
+      align-items: center;
     }
   }
   .factory-selection {
     display: flex;
     flex: 1;
-    background: coral;
     justify-content: space-between;
 
     .factory-plate {

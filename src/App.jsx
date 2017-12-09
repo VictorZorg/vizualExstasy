@@ -9,7 +9,7 @@ import Header from "./modules/common/Header";
 
 import MainContainer from './modules/main/Main.jsx'
 import MapContainer from './modules/map/MapContainer'
-import FactoryProductionContainer from './modules/factory_production/FactoryProductionContainer.jsx'
+import FactoryProductionContainer from './modules/factory_production/FactoryProductionContainer.jsx.js'
 
 export default class App extends React.Component {
 	render() {
@@ -20,7 +20,7 @@ export default class App extends React.Component {
 					<Switch>
 						<Route exact path='/' component={MainContainer}/>
 						<Route path='/map' component={MapContainer}/>
-						<Route path='/factory' component={FactoryProductionContainer}/>
+						<Route path='/factory/:factoryId' component={FactoryProductionContainer}/>
 					</Switch>
 				</div>
 			</div>
