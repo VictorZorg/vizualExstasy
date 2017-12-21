@@ -18,11 +18,6 @@ class Header extends React.Component {
 						Map
 					</Link>
 				</div>
-				<div className="header-link">
-					<Link to='/factory'>
-						Factory
-					</Link>
-				</div>
 			</div>
 		)
 	}

@@ -1,3 +1,5 @@
+@import "../../common/styles/ApplicationColors";
+
 .factory-container {
   display: flex;
   color: black;
@@ -9,20 +11,33 @@
 
   .factory-header {
     display: flex;
-    height: 10%;
+    height: 7%;
     margin-bottom: 1%;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
     .header-element {
       align-items: center;
     }
+    .factory-name {
+      display: flex;
+      flex: 0 1 100%;
+      text-align: center;
+      background: $name-chosen;
+      justify-content: center;
+      align-items: center;
+    }
+
     .quote {
       display: flex;
-      flex: 9;
+      flex: 1 0 67%;
       justify-content: flex-start;
-      padding-left: 5%;
+      padding-left: 3%;
     }
     .author {
       display: flex;
-      flex: 1;
+      flex: 1 0 30%;
       justify-content: center;
       align-items: center;
     }
@@ -37,26 +52,39 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-sizing: border-box;
+      border-collapse: collapse;
       flex: 1;
+      a {
+        font-weight: normal;
+      }
+    }
+
+    .factory-plate-chosen {
+      background: $chosen-plate-color;
+      a {
+        font-weight: bold;
+      }
     }
   }
   .factory-content {
     display: flex;
     flex: 6;
-    background: violet;
     height: 40%;
     flex-direction: row;
+    border-top: 1px solid black;
 
     .factory-production-table {
-      background: hotpink;
       display: flex;
       flex: 1;
+      border-right: 1px solid black;
+      box-sizing: border-box;
     }
 
     .factory-production-rose {
-      background: lightblue;
       display: flex;
       flex: 1;
+      box-sizing: border-box;
     }
   }
 }

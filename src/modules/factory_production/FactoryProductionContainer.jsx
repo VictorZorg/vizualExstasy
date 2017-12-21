@@ -72,12 +72,18 @@ class FactoryProductionContainer extends React.Component {
 
 	renderFactoryPlates() {
 		const allFactories = this.state.factoryData;
+		let chosenFactory = this.state.currentFactoryId;
+
 		return Object.keys(allFactories).map((factoryId, index) => {
 			let factory = allFactories[factoryId];
 			console.log(factory);
 			return (
 				<div
-					className="factory-plate"
+					className={
+						factoryId === chosenFactory
+							? "factory-plate factory-plate-chosen"
+							: "factory-plate"
+					}
 					key={index}
 				>
 					<Link
@@ -94,14 +100,12 @@ class FactoryProductionContainer extends React.Component {
 	render() {
 		return (
 			<div className="factory-container">
+				<div className="factory-selection">
+					{
+						this.renderFactoryPlates()
+					}
+				</div>
 				<div className="factory-header">
-					<div className="factory-name">
-						{
-							this.state.currentFactory
-								? this.state.currentFactory.name
-								: ""
-						}
-					</div>
 					<div className="quote header-element">
 						{this.state.currentQuotation.text}
 					</div>
@@ -109,17 +113,15 @@ class FactoryProductionContainer extends React.Component {
 						{this.state.currentQuotation.author}
 					</div>
 				</div>
-				<div className="factory-selection">
-					{
-						this.renderFactoryPlates()
-					}
-				</div>
 				<div className="factory-content">
 					<div className="factory-production-table">
 						TABLE
 					</div>
 					<div className="factory-production-rose">
-						<BarChart data={[5, 55, 9, 10, 1, 3]} size={[500, 500]}/>
+						<BarChart
+							data={[5, 55, 9, 10, 1, 3]}
+							size={[500, 500]}
+						/>
 					</div>
 				</div>
 			</div>
