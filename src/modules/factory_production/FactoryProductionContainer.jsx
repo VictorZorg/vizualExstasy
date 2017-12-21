@@ -25,7 +25,7 @@ class FactoryProductionContainer extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.state.currentFactoryId != nextProps.match.params.factoryId) {
+		if (this.state.currentFactoryId !== nextProps.match.params.factoryId) {
 			this.chooseCurrentFactory(nextProps.match.params.factoryId)
 		}
 	}
@@ -35,6 +35,10 @@ class FactoryProductionContainer extends React.Component {
 	 * @param factoryId - factory id
 	 */
 	chooseCurrentFactory(factoryId) {
+		//TODO: REMOVE!!! ==================================================================================================
+		if (factoryId === 0) {
+			factoryId = 1
+		}
 		let chosenFactory = this.state.factoryData[factoryId];
 		this.setState({
 			currentFactory: chosenFactory,
@@ -43,13 +47,17 @@ class FactoryProductionContainer extends React.Component {
 		this.chooseQuote(chosenFactory);
 	}
 
+	/**
+	 * Chooses random quotation from factory
+	 * @param factory
+	 */
 	chooseQuote(factory) {
 		let quote = {
 			text: "Quote: Factory is not chosen.",
 			author: "Author: Factory is not chosen."
 		};
 		if (factory) {
-			let chosenQuotation = this.getRandomInt(0, factory.quotation.length - 1);
+			let chosenQuotation = FactoryProductionContainer.getRandomInt(0, factory.quotation.length - 1);
 			quote.text = factory.quotation[chosenQuotation].text;
 			quote.author = factory.quotation[chosenQuotation].author;
 		}
@@ -58,9 +66,30 @@ class FactoryProductionContainer extends React.Component {
 		})
 	}
 
-	getRandomInt(min, max) {
+	static getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
+
+	renderFactoryPlates() {
+		const allFactories = this.state.factoryData;
+		return Object.keys(allFactories).map((factoryId, index) => {
+			let factory = allFactories[factoryId];
+			console.log(factory);
+			return (
+				<div
+					className="factory-plate"
+					key={index}
+				>
+					<Link
+						className="app-button button-details"
+						to={'/factory/' + factoryId}>
+						{factory.name}
+					</Link>
+				</div>
+			)
+		})
+	}
+
 
 	render() {
 		return (
@@ -81,48 +110,9 @@ class FactoryProductionContainer extends React.Component {
 					</div>
 				</div>
 				<div className="factory-selection">
-					<div className="factory-plate">
-						<Link
-							className="app-button button-details"
-							to={'/factory/1'}>
-							First
-						</Link>
-					</div>
-					<div className="factory-plate">
-						<Link
-							className="app-button button-details"
-							to={'/factory/2'}>
-							Second
-						</Link>
-					</div>
-					<div className="factory-plate">
-						<Link
-							className="app-button button-details"
-							to={'/factory/3'}>
-							Third
-						</Link>
-					</div>
-					<div className="factory-plate">
-						<Link
-							className="app-button button-details"
-							to={'/factory/4'}>
-							Fourth
-						</Link>
-					</div>
-					<div className="factory-plate">
-						<Link
-							className="app-button button-details"
-							to={'/factory/5'}>
-							Fifth
-						</Link>
-					</div>
-					<div className="factory-plate">
-						<Link
-							className="app-button button-details"
-							to={'/factory/6'}>
-							Sixth
-						</Link>
-					</div>
+					{
+						this.renderFactoryPlates()
+					}
 				</div>
 				<div className="factory-content">
 					<div className="factory-production-table">
