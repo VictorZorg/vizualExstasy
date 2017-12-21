@@ -1,17 +1,65 @@
 {
-  "name": "Factory",
-  "id": 101,
-  "country": "Rus` matushka",
-  "size": 1,
-  "location": {
-    "x": 1,
-    "y": 1
+  "1": {
+    "name": "Factory USSR",
+    "id": 101,
+    "country": "Rus` matushka",
+    "size": 1,
+    "location": {
+      "x": 1,
+      "y": 1
+    },
+    "color": "#fff",
+    "quotation": [
+      {
+        "author": "Vasya",
+        "text": "Davai rabotai"
+      },
+      {
+        "author": "Vladimir",
+        "text": "Ushitsya i ischo raz uchitsya"
+      }
+    ]
   },
-  "color": "#fff",
-  "quotes": {
-    "Vasya": "Davai rabotai",
-    "Vladimir": "Ushitsya i ischo raz uchitsya"
+  "2": {
+    "name": "Factory SS",
+    "id": 102,
+    "country": "Beer, kolbasa, devochki",
+    "size": 1,
+    "location": {
+      "x": 1,
+      "y": 1
+    },
+    "color": "#888553",
+    "quotation": [
+      {
+        "author": "Musolini",
+        "text": "Italia one love!"
+      },
+      {
+        "author": "Usi",
+        "text": "Pei pivo i risui!"
+      }
+    ]
+  },
+  "3": {
+    "name": "USA USA USA!",
+    "id": 103,
+    "country": "Jazz! ",
+    "size": 1,
+    "location": {
+      "x": 1,
+      "y": 1
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Donald",
+        "text": "Krya krya krya!"
+      },
+      {
+        "author": "Andrew Rayan",
+        "text": "No gods, only man!"
+      }
+    ]
   }
-//  Сюда через запятую другие любые данные
-//  Типа спонсор, год основания, заработок и прочее
 }

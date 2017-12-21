@@ -9,7 +9,7 @@ class MapContainer extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			showFactoryInfo: false,
+			showFactoryInfo: true,
 			factoryId: 0
 		}
 	}
