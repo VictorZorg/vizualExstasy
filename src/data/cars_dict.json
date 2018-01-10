@@ -1,0 +1,41 @@
+{
+  "1": {
+    "id": 1,
+    "brand": "chevrolet",
+    "model": "chevelle malibu",
+    "mpg": 18,
+    "cylinders": 8,
+    "displacement": 307.0,
+    "horsepower": 130,
+    "weight": 3504,
+    "acceleration": 12.0,
+    "year": 70,
+    "origin": "us"
+  },
+  "2": {
+    "id": 2,
+    "brand": "buick",
+    "model": "skylark 320",
+    "mpg": 15,
+    "cylinders": 8,
+    "displacement": 350.0,
+    "horsepower": 165,
+    "weight": 3693,
+    "acceleration": 11.5,
+    "year": 70,
+    "origin": "us"
+  },
+  "3": {
+    "id": 3,
+    "brand": "plymouth",
+    "model": "satellite",
+    "mpg": 18,
+    "cylinders": 8,
+    "displacement": 318.0,
+    "horsepower": 150,
+    "weight": 3436,
+    "acceleration": 11.0,
+    "year": 70,
+    "origin": "us"
+  }
+}
