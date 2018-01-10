@@ -1,5 +1,5 @@
-{
-  "1": {
+[
+  {
     "name": "Factory USSR",
     "id": 101,
     "country": "Rus` matushka",
@@ -20,7 +20,7 @@
       }
     ]
   },
-  "2": {
+  {
     "name": "Factory SS",
     "id": 102,
     "country": "Beer, kolbasa, devochki",
@@ -41,7 +41,7 @@
       }
     ]
   },
-  "3": {
+  {
     "name": "USA USA USA!",
     "id": 103,
     "country": "Jazz! ",
@@ -62,4 +62,4 @@
       }
     ]
   }
-}
+]
