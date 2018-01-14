@@ -1,0 +1,15 @@
+[
+    {
+        "id": 28,
+        "brand": "hi",
+        "model": "1200d",
+        "mpg": 9,
+        "cylinders": 8,
+        "displacement": 304.0,
+        "horsepower": 193,
+        "weight": 4732,
+        "acceleration": 18.5,
+        "year": 70,
+        "origin": "us"
+    }
+]
