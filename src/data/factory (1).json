@@ -1,0 +1,189 @@
+[
+  {
+    "name": "Kenosha Engine",
+    "id": 101,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 42.5842,
+      "y": -87.8424
+    },
+    "color": "#fff",
+    "quotation": [
+      {
+        "author": "Roy D. Chapin, Jr.",
+        "text": "Be ready when opportunity comes... Luck is the time when preparation and opportunity meet."
+      },
+    ]
+  },
+  {
+    "name": "Leeds Assembly",
+    "id": 102,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 39.055067,
+      "y": -94.504664
+    },
+    "color": "#888553",
+    "quotation": [
+      {
+        "author": "David Dunbar Buick",
+        "text": "The failure is the man who stays down when he falls."
+      },
+    ]
+  },
+  {
+    "name": "Van Nuys Assembly",
+    "id": 103,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 34.214167,
+      "y": -118.444444
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Louis Chevrolet",
+        "text": "Movement is the universal language of personal freedom."
+      },
+    ]
+  },
+  {
+    "name": "Jefferson North Assembly",
+    "id": 104,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 42.371759,
+      "y": -82.96698
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Walter Chrysler",
+        "text": "Every new development, highway, railroad, steamship line, building operation, whether it be a drainage project in old Greece or a new water system in Peru, means an added use of the automobile."
+      },
+    ]
+  },
+  {
+    "name": "Dodge Main",
+    "id": 105,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 42.381119,
+      "y": -83.047028
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "John Francis Dodge",
+        "text": "We’re brothers and we always work together…"
+      },
+    ]
+  },
+  {
+    "name": "Los Angeles Assembly",
+    "id": 106,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 33.983,
+      "y": -118.1004
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Henry Ford",
+        "text": "Coming together is a beginning; keeping together is progress; working together is success."
+      },
+    ]
+  },
+  {
+    "name": "International Harvester",
+    "id": 107,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 41.511944,
+      "y": -90.435278
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Cyrus McCormick",
+        "text": "Trying to do business without advertising is like winking at a pretty girl through a pair of green goggles. You may know what you are doing, but no one else does."
+      },
+    ]
+  },
+  {
+    "name": "San Jose Assembly Plant",
+    "id": 108,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 37.415833,
+      "y": -121.898056
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Edsel Ford",
+        "text": "Father made the most popular cars in the world; I want to make the best.."
+      },
+    ]
+  },
+  {
+    "name": "Lansing Car Assembly",
+    "id": 109,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 42.723887,
+      "y": -84.582539
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Ransom E. Olds",
+        "text": "—"
+      },
+    ]
+  },
+  {
+    "name": "Lynch Road Assembly",
+    "id": 110,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 42.4032,
+      "y":  -83.0365
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "Walter Chrysler",
+        "text": "To me every hour of the day and night is an unspeakably perfect miracle."
+      },
+    ]
+  },
+  {
+    "name": "General Motors Fairfax Assembly Plant",
+    "id": 111,
+    "country": "US",
+    "size": 1,
+    "location": {
+      "x": 39.147222,
+      "y": -94.603333
+    },
+    "color": "#416603",
+    "quotation": [
+      {
+        "author": "John DeLorean",
+        "text": "It's inevitable that the company come back."
+      },
+    ]
+  }
+]
