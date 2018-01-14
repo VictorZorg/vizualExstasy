@@ -1,0 +1,54 @@
+[
+    {
+        "id": 48,
+        "brand": "mercury",
+        "model": "capri 2000",
+        "mpg": 23,
+        "cylinders": 4,
+        "displacement": 122.0,
+        "horsepower": 86,
+        "weight": 2220,
+        "acceleration": 14.0,
+        "year": 71,
+        "origin": "us"
+    },
+    {
+        "id": 66,
+        "brand": "mercury",
+        "model": "marquis",
+        "mpg": 11,
+        "cylinders": 8,
+        "displacement": 429.0,
+        "horsepower": 208,
+        "weight": 4633,
+        "acceleration": 11.0,
+        "year": 72,
+        "origin": "us"
+    },
+    {
+        "id": 89,
+        "brand": "mercury",
+        "model": "marquis brougham",
+        "mpg": 12,
+        "cylinders": 8,
+        "displacement": 429.0,
+        "horsepower": 198,
+        "weight": 4952,
+        "acceleration": 11.5,
+        "year": 73,
+        "origin": "us"
+    },
+    {
+        "id": 112,
+        "brand": "mercury",
+        "model": "capri v6",
+        "mpg": 21,
+        "cylinders": 6,
+        "displacement": 155.0,
+        "horsepower": 107,
+        "weight": 2472,
+        "acceleration": 14.0,
+        "year": 73,
+        "origin": "us"
+    }
+]

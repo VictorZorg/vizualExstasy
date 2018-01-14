@@ -1,0 +1,80 @@
+[
+    {
+        "id": 8,
+        "brand": "pontiac",
+        "model": "catalina",
+        "mpg": 14,
+        "cylinders": 8,
+        "displacement": 455.0,
+        "horsepower": 225,
+        "weight": 4425,
+        "acceleration": 10.0,
+        "year": 70,
+        "origin": "us"
+    },
+    {
+        "id": 38,
+        "brand": "pontiac",
+        "model": "catalina brougham",
+        "mpg": 14,
+        "cylinders": 8,
+        "displacement": 400.0,
+        "horsepower": 175,
+        "weight": 4464,
+        "acceleration": 11.5,
+        "year": 71,
+        "origin": "us"
+    },
+    {
+        "id": 43,
+        "brand": "pontiac",
+        "model": "safari (sw)",
+        "mpg": 13,
+        "cylinders": 8,
+        "displacement": 400.0,
+        "horsepower": 175,
+        "weight": 5140,
+        "acceleration": 12.0,
+        "year": 71,
+        "origin": "us"
+    },
+    {
+        "id": 46,
+        "brand": "pontiac",
+        "model": "firebird",
+        "mpg": 19,
+        "cylinders": 6,
+        "displacement": 250.0,
+        "horsepower": 100,
+        "weight": 3282,
+        "acceleration": 15.0,
+        "year": 71,
+        "origin": "us"
+    },
+    {
+        "id": 62,
+        "brand": "pontiac",
+        "model": "catalina",
+        "mpg": 14,
+        "cylinders": 8,
+        "displacement": 400.0,
+        "horsepower": 175,
+        "weight": 4385,
+        "acceleration": 12.0,
+        "year": 72,
+        "origin": "us"
+    },
+    {
+        "id": 115,
+        "brand": "pontiac",
+        "model": "grand prix",
+        "mpg": 16,
+        "cylinders": 8,
+        "displacement": 400.0,
+        "horsepower": 230,
+        "weight": 4278,
+        "acceleration": 9.5,
+        "year": 73,
+        "origin": "us"
+    }
+]

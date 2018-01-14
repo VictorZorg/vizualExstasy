@@ -1,0 +1,41 @@
+[
+    {
+        "id": 68,
+        "brand": "oldsmobile",
+        "model": "delta 88 royale",
+        "mpg": 12,
+        "cylinders": 8,
+        "displacement": 350.0,
+        "horsepower": 160,
+        "weight": 4456,
+        "acceleration": 13.5,
+        "year": 72,
+        "origin": "us"
+    },
+    {
+        "id": 105,
+        "brand": "oldsmobile",
+        "model": "vista cruiser",
+        "mpg": 12,
+        "cylinders": 8,
+        "displacement": 350.0,
+        "horsepower": 180,
+        "weight": 4499,
+        "acceleration": 12.5,
+        "year": 73,
+        "origin": "us"
+    },
+    {
+        "id": 123,
+        "brand": "oldsmobile",
+        "model": "omega",
+        "mpg": 11,
+        "cylinders": 8,
+        "displacement": 350.0,
+        "horsepower": 180,
+        "weight": 3664,
+        "acceleration": 11.0,
+        "year": 73,
+        "origin": "us"
+    }
+]

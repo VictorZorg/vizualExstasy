@@ -1,0 +1,28 @@
+[
+    {
+        "id": 69,
+        "brand": "chrysler",
+        "model": "newport royal",
+        "mpg": 13,
+        "cylinders": 8,
+        "displacement": 400.0,
+        "horsepower": 190,
+        "weight": 4422,
+        "acceleration": 12.5,
+        "year": 72,
+        "origin": "us"
+    },
+    {
+        "id": 93,
+        "brand": "chrysler",
+        "model": "new yorker brougham",
+        "mpg": 13,
+        "cylinders": 8,
+        "displacement": 440.0,
+        "horsepower": 215,
+        "weight": 4735,
+        "acceleration": 11.0,
+        "year": 73,
+        "origin": "us"
+    }
+]
