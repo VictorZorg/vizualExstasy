@@ -28,12 +28,6 @@ class CarTable extends Component {
 		this.drawTable();
 	}
 
-	drawArc() {
-		const context = this.setContext();
-		this.setBackground(context);
-		this.setForeground(context);
-	}
-
 	drawTable() {
 		let self = this;
 		let data = this.state.cars;
@@ -96,6 +90,9 @@ class CarTable extends Component {
 				if (i % 2 == 0) {
 					return "#D8D8D8";
 				}
+			})
+			.on("click", function (row, i) {
+				self.props.chooseCar(row);
 			});
 
 		let cells = rows.selectAll("td")
@@ -123,52 +120,6 @@ class CarTable extends Component {
 					}
 				})
 			});
-	}
-
-
-	setContext() {
-		return d3.select(this.refs.arc).append('svg')
-			.attr('height', 13)
-			.attr('width', 14)
-			.attr('id', 44)
-			.append('g')
-			.attr('transform', `translate(${13 / 2}, ${6 / 2})`);
-	}
-
-	setBackground(context) {
-		return context.append('path')
-			.datum({endAngle: this.tau})
-			.style('fill', this.props.backgroundColor)
-			.attr('d', this.arc());
-	}
-
-	setForeground(context) {
-		return context.append('path')
-			.datum({endAngle: this.tau * this.props.percentComplete})
-			.style('fill', this.props.foregroundColor)
-			.attr('d', this.arc());
-	}
-
-	tau = Math.PI * 2;
-
-	arc() {
-		return d3.arc()
-			.innerRadius(4)
-			.outerRadius(7)
-			.startAngle(0)
-	}
-
-	getCarsTable() {
-		return this.state.cars.map((car, index) => {
-			return (
-				<div
-					ref={nodeTwo => this.nodeTwo = nodeTwo}
-					key={index}
-				>
-					{car.model}
-				</div>
-			)
-		});
 	}
 
 	render() {

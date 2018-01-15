@@ -17,27 +17,39 @@ class BarChart extends Component {
 		this.createBarChart()
 	}
 
+
 	createBarChart() {
-		const node = this.node
-		const dataMax = max(this.props.data)
+
+		let data = [];
+		Object.keys(this.props.car).map(key => {
+			let carProperty = this.props.car[key];
+			if (Number.isInteger(carProperty) && carProperty < 300) {
+				data.push(carProperty)
+			}
+		});
+
+		console.log(data);
+
+		const node = this.node;
+		const dataMax = max(data);
 		const yScale = scaleLinear()
 			.domain([0, dataMax])
-			.range([0, this.props.size[1]])
+			.range([0, this.props.size[1]]);
 		select(node)
 			.selectAll('rect')
-			.data(this.props.data)
+			.data(data)
 			.enter()
 			.append('rect');
 
 		select(node)
 			.selectAll('rect')
-			.data(this.props.data)
+			.data(data)
 			.exit()
 			.remove();
 
 		select(node)
 			.selectAll('rect')
-			.data(this.props.data)
+			.data(data)
 			.style('fill', '#fe9922')
 			.attr('x', (d, i) => i * 25)
 			.attr('y', d => this.props.size[1] - yScale(d)

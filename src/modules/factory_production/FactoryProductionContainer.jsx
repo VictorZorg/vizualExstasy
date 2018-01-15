@@ -26,9 +26,10 @@ class FactoryProductionContainer extends React.Component {
 		this.state = {
 			currentFactoryId: 0,
 			factoryData: dataFromFile,
-			currentFactory: null,
-			currentQuotation: null,
-			currentCarsData:[],
+			currentFactory: [],
+			currentQuotation: [],
+			currentCarsData: [],
+			currentCar: [],
 			allFactoryData: {
 				dodgemain: DodgeMain,
 				generalmotorsfairfaxassemblyplant: GeneralMotorsFairfaxAssemblyPlant,
@@ -42,7 +43,6 @@ class FactoryProductionContainer extends React.Component {
 				sanjoseassemblyplant: SanJoseAssemblyPlant,
 				vannuysassembly: VanNuysAssembly
 			}
-
 		}
 	}
 
@@ -68,7 +68,7 @@ class FactoryProductionContainer extends React.Component {
 		let chosenFactory = this.state.factoryData[factoryId];
 		this.setState({
 			currentFactory: chosenFactory,
-			currentFactoryId: factoryId
+			currentFactoryId: factoryId,
 		});
 		this.chooseQuote(chosenFactory);
 		this.chooseData(chosenFactory)
@@ -111,10 +111,25 @@ class FactoryProductionContainer extends React.Component {
 		// 	.catch(function (error) {
 		// 		console.log(error);
 		// 	});
+		let newFactoryData = this.state.allFactoryData[jsonName];
 		this.setState({
-			currentCarsData: this.state.allFactoryData[jsonName]
+			currentCarsData: newFactoryData,
+			currentCar: newFactoryData[0] ? newFactoryData[0] : []
 		})
 	}
+
+	/**
+	 * Chooses car from current list
+	 * Necessary for ROSE working
+	 * @param car
+	 */
+	chooseCar(car) {
+		let index = this.state.currentCarsData.indexOf(car);
+		this.setState({
+			currentCar: car
+		})
+	}
+
 
 	static getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -169,12 +184,14 @@ class FactoryProductionContainer extends React.Component {
 					>
 						<CarTable
 							carData={this.state.currentCarsData}
+							chooseCar={this.chooseCar.bind(this)}
 						/>
 					</div>
 					<div className="factory-production-rose">
 						<BarChart
 							data={[5, 55, 9, 10, 1, 3]}
 							size={[500, 500]}
+							car={this.state.currentCar}
 						/>
 					</div>
 				</div>
