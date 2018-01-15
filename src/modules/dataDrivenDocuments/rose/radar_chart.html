@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<link rel="stylesheet" href="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.css">
+
+<style>
+    body {
+        padding: 20px;
+    }
+</style>
+
+<style>
+    .radar-chart .area {
+        fill-opacity: 0.7;
+    }
+    .radar-chart.focus .area {
+        fill-opacity: 0.3;
+    }
+    .radar-chart.focus .area.focused {
+        fill-opacity: 0.9;
+    }
+    .area.germany, .germany .circle {
+        fill: #FFD700;
+        stroke: none;
+    }
+    .area.argentina, .argentina .circle {
+        fill: #ADD8E6;
+        stroke: none;
+    }
+    .area.chevrolet, .chevrolet .circle {
+        fill: #FF152F;
+        stroke: none;
+</style>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
+
+<script>
+    RadarChart.defaultConfig.color = function() {};
+    RadarChart.defaultConfig.radius = 3;
+    RadarChart.defaultConfig.w = 600;
+    RadarChart.defaultConfig.h = 600;
+</script>
+
+<span></span>
+
+<script>
+    var data = [
+        {
+            className: 'germany', // optional can be used for styling
+            axes: [
+                {axis: "mpg", value: 13},
+                {axis: "cylinders", value: 6},
+                {axis: "displacement", value: 5},
+                {axis: "horsepower", value: 9},
+                {axis: "weight", value: 2},
+                {axis: "acceleration", value: 5}
+            ]
+        },
+
+        {
+            className: 'chevrolet',
+            axes: [
+                {axis: "mpg", value: 14},
+                {axis: "cylinders", value: 5},
+                {axis: "displacement", value: 8},
+                {axis: "horsepower", value: 11},
+                {axis: "weight", value: 5},
+                {axis: "acceleration", value: 8}
+            ]
+        }
+    ];
+
+</script>
+
+<div class="chart-container"></div>
+<script>
+RadarChart.draw(".chart-container", data);
+</script>

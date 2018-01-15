@@ -18,10 +18,13 @@ class CarTable extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		d3.select(this.refs.arc).select("table").remove();
 		this.setState({
 			cars: nextProps.carData
 		})
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		return this.state.cars !== nextProps.cars
 	}
 
 	componentDidUpdate() {
@@ -32,6 +35,12 @@ class CarTable extends Component {
 		let self = this;
 		let data = this.state.cars;
 		const columns = Object.keys(data[0]);
+		let sort = self.state.sort;
+
+		// if (d3.select(this.refs.arc).select("table")) {
+		// 	console.log("Already exists")
+		// 	d3.select(this.refs.arc).select("table").remove();
+		// }
 
 		let table = d3.select(this.refs.arc).append("table");
 		let thead = table.append("thead")
@@ -51,10 +60,8 @@ class CarTable extends Component {
 			.on("click", function (header, i) {
 
 				d3.select("img").remove();
-				if (self.state.sort) {
-					self.setState({
-						sort: false
-					});
+				if (sort) {
+					sort = false;
 					d3.select(this).append('img').attr('src', up);
 					d3.select(this).style("cursor", "n-resize");
 					tbody.selectAll("tr").sort(function (a, b) {
@@ -66,9 +73,7 @@ class CarTable extends Component {
 					});
 				}
 				else {
-					self.setState({
-						sort: true
-					});
+					sort = true;
 
 					d3.select(this).append('img').attr('src', down);
 					tbody.selectAll("tr").sort(function (a, b) {

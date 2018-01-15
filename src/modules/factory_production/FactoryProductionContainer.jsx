@@ -3,8 +3,7 @@
  */
 import React from "react";
 import {Link} from "react-router-dom";
-
-import BarChart from "../../modules/dataDrivenDocuments/barChart/BarChart";
+import Radar from "@smartive/react-d3-radar";
 import CarTable from "../../modules/dataDrivenDocuments/carsTable/CarTable";
 import dataFromFile from "../../data/factories.json";
 import DodgeMain from "../../data/DodgeMain.json";
@@ -114,8 +113,9 @@ class FactoryProductionContainer extends React.Component {
 		let newFactoryData = this.state.allFactoryData[jsonName];
 		this.setState({
 			currentCarsData: newFactoryData,
-			currentCar: newFactoryData[0] ? newFactoryData[0] : []
-		})
+		});
+		this.chooseCar(newFactoryData[0] ? newFactoryData[0] : [])
+
 	}
 
 	/**
@@ -124,10 +124,30 @@ class FactoryProductionContainer extends React.Component {
 	 * @param car
 	 */
 	chooseCar(car) {
-		let index = this.state.currentCarsData.indexOf(car);
-		this.setState({
-			currentCar: car
-		})
+		const carValueNames = [
+			"mpg",
+			"cylinders",
+			"displacement",
+			"horsepower",
+			"weight",
+			"acceleration"
+		];
+		if (car) {
+			car["values"] = {};
+			let value = 0;
+			carValueNames.map(name => {
+				value = car[name] ? car[name] : 0;
+				if (name === 'weight') {
+					value = value / 1000;
+				} else if (value < 100) {
+					value = value * 10
+				}
+				car.values[name] = value;
+			});
+			this.setState({
+				currentCar: car,
+			})
+		}
 	}
 
 
@@ -188,10 +208,25 @@ class FactoryProductionContainer extends React.Component {
 						/>
 					</div>
 					<div className="factory-production-rose">
-						<BarChart
-							data={[5, 55, 9, 10, 1, 3]}
-							size={[500, 500]}
-							car={this.state.currentCar}
+						<Radar
+							width={500}
+							height={500}
+							padding={70}
+							domainMax={500}
+							highlighted={null}
+							data={{
+								variables: [
+									{key: 'mpg', label: 'Mpg '},
+									{key: 'cylinders', label: 'Cylinders '},
+									{key: 'displacement', label: 'Displacement '},
+									{key: 'horsepower', label: 'Horsepower '},
+									{key: 'weight', label: 'Weight'},
+									{key: 'acceleration', label: 'Acceleration '},
+								],
+								sets: [
+									this.state.currentCar
+								],
+							}}
 						/>
 					</div>
 				</div>
