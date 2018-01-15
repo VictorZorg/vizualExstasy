@@ -1,41 +1,5 @@
-.map-container {
-  flex-direction: row;
-  position: relative;
-
-  .map-area {
-    display: flex;
-    flex: 1;
-  }
-
-  .factory-panel {
-    border-left: 1px solid black;
-    display: flex;
-    width: 20%;
-    height: 100%;
-    flex-direction: column;
-    position: absolute;
-    justify-content: space-between;
-    right: 0;
-
-    .factory-info {
-      height:70%;
-      background: hotpink;
-    }
-    .factory-action-buttons {
-      height:20%;
-      background: azure;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
-
-      .button-launch {
-        background: gold;
-      }
-
-      .button-details {
-        background: cornflowerblue;
-      }
-    }
-  }
+.zzz{
+  background: yellow;
+  display: flex;
+  justify-content: center;
 }
