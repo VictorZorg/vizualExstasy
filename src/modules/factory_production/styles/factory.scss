@@ -11,18 +11,16 @@
 
   .factory-header {
     display: flex;
-    height: 7%;
-    margin-bottom: 1%;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 10px 0;
 
     .header-element {
       align-items: center;
     }
     .factory-name {
       display: flex;
-      flex: 0 1 100%;
       text-align: center;
       background: $name-chosen;
       justify-content: center;
@@ -44,8 +42,8 @@
   }
   .factory-selection {
     display: flex;
-    flex: 1;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .factory-plate {
       border: 1px darkblue solid;
@@ -69,16 +67,17 @@
   }
   .factory-content {
     display: flex;
-    flex: 6;
-    height: 40%;
+    flex: 8;
     flex-direction: row;
     border-top: 1px solid black;
+    overflow: hidden;
 
     .factory-production-table {
       display: flex;
       flex: 1;
       border-right: 1px solid black;
       box-sizing: border-box;
+      overflow: overlay;
     }
 
     .factory-production-rose {

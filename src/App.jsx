@@ -5,13 +5,13 @@ import {
 	Route,
 	Switch,
 } from 'react-router-dom'
+import Script from 'react-load-script'
 
 import Header from "./modules/common/Header";
 import MainContainer from './modules/main/Main.jsx'
 import MapContainer from './modules/map/MapContainer'
 import FactoryProductionContainer from './modules/factory_production/FactoryProductionContainer.jsx'
 
-require('./scripts/d3')
 
 export default class App extends React.Component {
 	render() {

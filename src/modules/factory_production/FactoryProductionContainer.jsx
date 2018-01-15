@@ -5,7 +5,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import BarChart from "../../modules/dataDrivenDocuments/barChart/BarChart";
-import dataFromFile from "../../data/factory.json";
+import CarTable from "../../modules/dataDrivenDocuments/carsTable/CarTable";
+import dataFromFile from "../../data/factories.json";
+import carsData from "../../data/cars.json";
 
 class FactoryProductionContainer extends React.Component {
 
@@ -45,6 +47,7 @@ class FactoryProductionContainer extends React.Component {
 			currentFactoryId: factoryId
 		});
 		this.chooseQuote(chosenFactory);
+		this.chooseData(chosenFactory)
 	}
 
 	/**
@@ -66,6 +69,14 @@ class FactoryProductionContainer extends React.Component {
 		})
 	}
 
+	/**
+	 * Gets data for specified factory
+	 * @param factory
+	 */
+	chooseData(factory) {
+		conso
+	}
+
 	static getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
@@ -76,7 +87,6 @@ class FactoryProductionContainer extends React.Component {
 
 		return Object.keys(allFactories).map((factoryId, index) => {
 			let factory = allFactories[factoryId];
-			console.log(factory);
 			return (
 				<div
 					className={
@@ -114,8 +124,13 @@ class FactoryProductionContainer extends React.Component {
 					</div>
 				</div>
 				<div className="factory-content">
-					<div className="factory-production-table">
-						TABLE
+					<div
+						className="factory-production-table"
+						id="production-table"
+					>
+						<CarTable
+							carData={carsData}
+						/>
 					</div>
 					<div className="factory-production-rose">
 						<BarChart
