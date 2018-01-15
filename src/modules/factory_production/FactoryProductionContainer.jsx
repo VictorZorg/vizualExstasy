@@ -7,7 +7,17 @@ import {Link} from "react-router-dom";
 import BarChart from "../../modules/dataDrivenDocuments/barChart/BarChart";
 import CarTable from "../../modules/dataDrivenDocuments/carsTable/CarTable";
 import dataFromFile from "../../data/factories.json";
-import carsData from "../../data/cars.json";
+import DodgeMain from "../../data/DodgeMain.json";
+import GeneralMotorsFairfaxAssemblyPlant from "../../data/GeneralMotorsFairfaxAssemblyPlant.json";
+import InternationalHarvester from "../../data/InternationalHarvester.json";
+import JeffersonNorthAssembly from "../../data/JeffersonNorthAssembly.json";
+import KenoshaEngine from "../../data/KenoshaEngine.json";
+import LansingCarAssembly from "../../data/LansingCarAssembly.json";
+import LeedsAssembly from "../../data/LeedsAssembly.json";
+import LosAngelesAssembly from "../../data/LosAngelesAssembly.json";
+import LynchRoadAssembly from "../../data/LynchRoadAssembly.json";
+import SanJoseAssemblyPlant from "../../data/SanJoseAssemblyPlant.json";
+import VanNuysAssembly from "../../data/VanNuysAssembly.json";
 
 class FactoryProductionContainer extends React.Component {
 
@@ -17,7 +27,21 @@ class FactoryProductionContainer extends React.Component {
 			currentFactoryId: 0,
 			factoryData: dataFromFile,
 			currentFactory: null,
-			currentQuotation: null
+			currentQuotation: null,
+			currentCarsData:[],
+			allFactoryData: {
+				dodgemain: DodgeMain,
+				generalmotorsfairfaxassemblyplant: GeneralMotorsFairfaxAssemblyPlant,
+				internationalharvester: InternationalHarvester,
+				jeffersonnorthassembly: JeffersonNorthAssembly,
+				kenoshaengine: KenoshaEngine,
+				lansingcarassembly: LansingCarAssembly,
+				leedsassembly: LeedsAssembly,
+				losangelesassembly: LosAngelesAssembly,
+				lynchroadassembly: LynchRoadAssembly,
+				sanjoseassemblyplant: SanJoseAssemblyPlant,
+				vannuysassembly: VanNuysAssembly
+			}
 
 		}
 	}
@@ -74,7 +98,22 @@ class FactoryProductionContainer extends React.Component {
 	 * @param factory
 	 */
 	chooseData(factory) {
-		conso
+		let jsonName = factory.name.replace(/\s/g, '').toLowerCase();
+		//TODO: Change on another method!!! ==================================================================================================
+		// console.log(jsonName);
+		// console.log(this.state.allFactoryData[jsonName]);
+
+		// axios.post('http://localhost:8008/src/data/' + jsonName + '.json')
+		// 	.then(function (response) {
+		// 		console.log("axios");
+		// 		console.log(response);
+		// 	})
+		// 	.catch(function (error) {
+		// 		console.log(error);
+		// 	});
+		this.setState({
+			currentCarsData: this.state.allFactoryData[jsonName]
+		})
 	}
 
 	static getRandomInt(min, max) {
@@ -129,7 +168,7 @@ class FactoryProductionContainer extends React.Component {
 						id="production-table"
 					>
 						<CarTable
-							carData={carsData}
+							carData={this.state.currentCarsData}
 						/>
 					</div>
 					<div className="factory-production-rose">

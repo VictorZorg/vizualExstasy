@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import * as d3 from "d3";
-import up from './up.png'
-import down from './down.png'
+import up from "./up.png";
+import down from "./down.png";
 
 class CarTable extends Component {
 
@@ -15,6 +15,13 @@ class CarTable extends Component {
 
 	componentDidMount() {
 		this.drawTable();
+	}
+
+	componentWillReceiveProps(nextProps) {
+		d3.select(this.refs.arc).select("table").remove();
+		this.setState({
+			cars: nextProps.carData
+		})
 	}
 
 	componentDidUpdate() {
