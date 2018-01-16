@@ -37,10 +37,10 @@ class CarTable extends Component {
 		const columns = Object.keys(data[0]);
 		let sort = self.state.sort;
 
-		// if (d3.select(this.refs.arc).select("table")) {
-		// 	console.log("Already exists")
-		// 	d3.select(this.refs.arc).select("table").remove();
-		// }
+		if (d3.select(this.refs.arc).select("table")) {
+			console.log("Already exists")
+			d3.select(this.refs.arc).select("table").remove();
+		}
 
 		let table = d3.select(this.refs.arc).append("table");
 		let thead = table.append("thead")
@@ -62,7 +62,7 @@ class CarTable extends Component {
 				d3.select("img").remove();
 				if (sort) {
 					sort = false;
-					d3.select(this).append('img').attr('src', up);
+					d3.select(this).append('img').attr('src',down );
 					d3.select(this).style("cursor", "n-resize");
 					tbody.selectAll("tr").sort(function (a, b) {
 						return d3.descending(a[header], b[header]);
@@ -75,7 +75,7 @@ class CarTable extends Component {
 				else {
 					sort = true;
 
-					d3.select(this).append('img').attr('src', down);
+					d3.select(this).append('img').attr('src', up);
 					tbody.selectAll("tr").sort(function (a, b) {
 						return d3.ascending(a[header], b[header]);
 					}).style("background-color", function (d, i) {
