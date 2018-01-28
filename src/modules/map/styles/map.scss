@@ -7,6 +7,12 @@
     flex: 1;
   }
 
+  .factories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+  }
+
   .factory-panel {
     border-left: 1px solid black;
     display: flex;
@@ -35,6 +41,10 @@
 
       .button-details {
         background: cornflowerblue;
+
+        img {
+          height: 30px;
+        }
       }
     }
   }

@@ -3,6 +3,7 @@
  */
 import React from "react";
 import {Link} from "react-router-dom";
+import dataFromFile from "../../data/factories.json";
 
 class MapContainer extends React.Component {
 
@@ -10,7 +11,8 @@ class MapContainer extends React.Component {
 		super();
 		this.state = {
 			showFactoryInfo: true,
-			factoryId: 0
+			factoryId: 0,
+			factoriesData: dataFromFile
 		}
 	}
 
@@ -24,13 +26,47 @@ class MapContainer extends React.Component {
 	hideFactoryInfo() {
 		this.setState({
 			showFactoryInfo: false,
-			factoryId: 0
+			factoryId: null
+		})
+	}
+
+	/**
+	 * Gets data for specified factory
+	 * @param factory
+	 */
+	chooseData(factory) {
+		this.setState({
+			factoryId: factory,
+			showFactoryInfo: true
+		})
+	}
+
+	renderFactoryPlates() {
+		const allFactories = this.state.factoriesData;
+
+		return Object.keys(allFactories).map((factoryId, index) => {
+			let factory = allFactories[factoryId];
+			return (
+				<div
+					key={index}
+				>
+					<button
+						className=""
+						onClick={e => this.chooseData(factoryId)}
+					>
+						{factory.name}
+					</button>
+				</div>
+			)
 		})
 	}
 
 	render() {
 		return (
 			<div className="map-container view-container">
+				<div className="factories">
+					{this.renderFactoryPlates()}
+				</div>
 				<div className="map-area">
 					<div className="action">
 						{
@@ -51,19 +87,18 @@ class MapContainer extends React.Component {
 					</div>
 				</div>
 				{
-					this.state.showFactoryInfo
+					this.state.showFactoryInfo && this.state.factoryId
 						? <div className="factory-panel">
 						<div className="factory-info">
-							Info for factory id:{this.state.factoryId}
+							<p>Info for factory name:{this.state.factoriesData[this.state.factoryId].name}</p>
+							<p>Info for factory brand:{this.state.factoriesData[this.state.factoryId].brand}</p>
+							<p>Info for factory country:{this.state.factoriesData[this.state.factoryId].country}</p>
 						</div>
 						<div className="factory-action-buttons">
-							<div className="app-button button-launch">
-								Launch
-							</div>
 							<Link
 								className="app-button button-details"
 								to={'/factory/' + this.state.factoryId}>
-								Details
+								<img src={require('../../img/details.png')}/>
 							</Link>
 						</div>
 					</div>

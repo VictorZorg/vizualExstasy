@@ -15,7 +15,7 @@ class Header extends React.Component {
 				</div>
 				<div className="header-link">
 					<Link to='/map'>
-						Map
+						<img src={require('../../img/map.png')} />
 					</Link>
 				</div>
 			</div>

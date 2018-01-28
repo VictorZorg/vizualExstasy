@@ -120,7 +120,6 @@ class FactoryProductionContainer extends React.Component {
 			});
 			this.chooseCar(newFactoryData[0] ? newFactoryData[0] : [])
 		}
-
 	}
 
 	/**
