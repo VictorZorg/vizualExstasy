@@ -157,9 +157,17 @@ class FactoryProductionContainer extends React.Component {
 			carValueNames.map(name => {
 				value = car[name] ? car[name] : 0;
 				if (name === 'weight') {
-					value = value / 1000;
-					// } else if (value < 100) {
-					// 	value = value * 10
+					value = value;
+				} else if (name === 'mpg') {
+					value = value * 100;
+				} else if (name === 'cylinders') {
+					value = value * 1000;
+				} else if (name === 'displacement') {
+					value = value * 10;
+				} else if (name === 'horsepower') {
+					value = value * 10;
+				} else if (name === 'acceleration') {
+					value = value * 100;
 				}
 				currentCarValues.values[name] = value;
 			});
