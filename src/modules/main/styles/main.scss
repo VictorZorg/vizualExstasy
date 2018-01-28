@@ -5,4 +5,15 @@
   .logo {
     animation: mymove 5s infinite;
   }
+
+  .greetings {
+    justify-content: center;
+    display: flex;
+    font-size: 3em;
+    margin: 5% 0;
+
+    .logo {
+      margin-left: 20px;
+    }
+  }
 }

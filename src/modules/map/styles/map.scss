@@ -14,7 +14,7 @@
   }
 
   .factory-panel {
-    border-left: 1px solid black;
+    border-left: 2px solid darkred;
     display: flex;
     width: 20%;
     height: 100%;
@@ -25,7 +25,6 @@
 
     .factory-info {
       height:70%;
-      background: hotpink;
     }
     .factory-action-buttons {
       height:20%;
@@ -40,7 +39,6 @@
       }
 
       .button-details {
-        background: cornflowerblue;
 
         img {
           height: 30px;

@@ -70,13 +70,13 @@
     display: flex;
     flex: 8;
     flex-direction: row;
-    border-top: 1px solid black;
+    border-top: 1px solid darkred;
     overflow: hidden;
 
     .factory-production-table {
       display: flex;
       flex: 2;
-      border-right: 1px solid black;
+      border-right: 1px solid darkred;
       box-sizing: border-box;
       overflow: overlay;
     }

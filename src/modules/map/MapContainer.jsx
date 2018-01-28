@@ -90,9 +90,9 @@ class MapContainer extends React.Component {
 					this.state.showFactoryInfo && this.state.factoryId
 						? <div className="factory-panel">
 						<div className="factory-info">
-							<p>Info for factory name:{this.state.factoriesData[this.state.factoryId].name}</p>
-							<p>Info for factory brand:{this.state.factoriesData[this.state.factoryId].brand}</p>
-							<p>Info for factory country:{this.state.factoriesData[this.state.factoryId].country}</p>
+							<p>Factory name:{this.state.factoriesData[this.state.factoryId].name}</p>
+							<p>Factory brand:{this.state.factoriesData[this.state.factoryId].brand}</p>
+							<p>Factory country:{this.state.factoriesData[this.state.factoryId].country}</p>
 						</div>
 						<div className="factory-action-buttons">
 							<Link
