@@ -89,6 +89,9 @@
 
       .rose-header {
         text-align: center;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
       }
     }
   }

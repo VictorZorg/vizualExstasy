@@ -1,6 +1,7 @@
 [
   {
-    "name": "AMC",
+    "name": "Kenosha Engine",
+    "brand": "AMC",
     "id": 101,
     "country": "US",
     "size": 1,
@@ -17,7 +18,8 @@
     ]
   },
   {
-    "name": "Buick",
+    "name": "Leeds Assembly",
+    "brand": "Buick",
     "id": 102,
     "country": "US",
     "size": 1,
@@ -34,7 +36,8 @@
     ]
   },
   {
-    "name": "Chevrolet",
+    "name": "Van Nuys Assembly",
+    "brand": "Chevrolet",
     "id": 103,
     "country": "US",
     "size": 1,
@@ -51,7 +54,8 @@
     ]
   },
   {
-    "name": "Chrysler",
+    "name": "Jefferson North Assembly",
+    "brand": "Chrysler",
     "id": 104,
     "country": "US",
     "size": 1,
@@ -68,7 +72,8 @@
     ]
   },
   {
-    "name": "Dodge",
+    "name": "Dodge Main",
+    "brand": "Dodge",
     "id": 105,
     "country": "US",
     "size": 1,
@@ -85,7 +90,8 @@
     ]
   },
   {
-    "name": "Ford",
+    "name": "Los Angeles Assembly",
+    "brand": "Ford",
     "id": 106,
     "country": "US",
     "size": 1,
@@ -102,7 +108,8 @@
     ]
   },
   {
-    "name": "HI",
+    "name": "International Harvester",
+    "brand": "HI",
     "id": 107,
     "country": "US",
     "size": 1,
@@ -119,7 +126,8 @@
     ]
   },
   {
-    "name": "Mercury",
+    "name": "San Jose Assembly Plant",
+    "brand": "Mercury",
     "id": 108,
     "country": "US",
     "size": 1,
@@ -136,7 +144,8 @@
     ]
   },
   {
-    "name": "Oldsmobile",
+    "name": "Lansing Car Assembly",
+    "brand": "Oldsmobile",
     "id": 109,
     "country": "US",
     "size": 1,
@@ -153,7 +162,8 @@
     ]
   },
   {
-    "name": "Plymouth",
+    "name": "Lynch Road Assembly",
+    "brand": "Plymouth",
     "id": 110,
     "country": "US",
     "size": 1,
@@ -170,7 +180,8 @@
     ]
   },
   {
-    "name": "Pontiac",
+    "name": "General Motors Fairfax Assembly Plant",
+    "brand": "Pontiac",
     "id": 111,
     "country": "US",
     "size": 1,

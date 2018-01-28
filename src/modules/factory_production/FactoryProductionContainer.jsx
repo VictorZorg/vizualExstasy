@@ -3,7 +3,7 @@
  */
 import React from "react";
 import {Link} from "react-router-dom";
-import Radar from "@smartive/react-d3-radar";
+import Radar from "react-d3-radar";
 import CarTable from "../../modules/dataDrivenDocuments/carsTable/CarTable";
 import dataFromFile from "../../data/factories.json";
 import DodgeMain from "../../data/DodgeMain.json";
@@ -60,10 +60,13 @@ class FactoryProductionContainer extends React.Component {
 	 * @param factoryId - factory id
 	 */
 	chooseCurrentFactory(factoryId) {
-		console.log(factoryId)
 		//TODO: REMOVE!!! ==================================================================================================
-		if (factoryId == 0) {
-			this.chooseData(false)
+		if (factoryId == "all" || !factoryId) {
+			this.setState({
+				currentFactory: null,
+				currentFactoryId: null,
+			});
+			this.chooseData(false);
 		} else {
 			let chosenFactory = this.state.factoryData[factoryId];
 			this.setState({
@@ -99,23 +102,7 @@ class FactoryProductionContainer extends React.Component {
 	 * @param factory
 	 */
 	chooseData(factory) {
-		//TODO: Change on another method!!! ==================================================================================================
-		// console.log(jsonName);
-		// console.log(this.state.allFactoryData[jsonName]);
-
-		// axios.post('http://localhost:8008/src/data/' + jsonName + '.json')
-		// 	.then(function (response) {
-		// 		console.log("axios");
-		// 		console.log(response);
-		// 	})
-		// 	.catch(function (error) {
-		// 		console.log(error);
-		// 	});
-
-		console.log("Choose data");
-		console.log("Factory: " + factory);
 		if (!factory) {
-			console.log("Choose total");
 			let totalData = [];
 			let stateData = Object.assign({}, this.state.allFactoryData);
 			Object.keys(stateData).map(factory => {
@@ -201,7 +188,7 @@ class FactoryProductionContainer extends React.Component {
 					<Link
 						className="app-button button-details"
 						to={'/factory/' + factoryId}>
-						{factory.name}
+						{factory.brand}
 					</Link>
 				</div>
 			)
@@ -213,6 +200,19 @@ class FactoryProductionContainer extends React.Component {
 		return (
 			<div className="factory-container">
 				<div className="factory-selection">
+					<div
+						className={
+							this.props.match.params.factoryId === "all"
+								? "factory-plate factory-plate-chosen"
+								: "factory-plate"
+						}
+					>
+						<Link
+							className="app-button button-details"
+							to={'/factory/all'}>
+							All
+						</Link>
+					</div>
 					{
 						this.renderFactoryPlates()
 					}
@@ -237,16 +237,24 @@ class FactoryProductionContainer extends React.Component {
 					</div>
 					<div className="factory-production-rose">
 						<div className="rose-header">
-							{
-								this.state.currentCar.model
-							}
+							<div className="brand">
+								{
+									this.state.currentCar.brand
+								}
+							</div>
+							<div className="model">
+								{
+									this.state.currentCar.model
+								}
+							</div>
+
 						</div>
 						<div className="rose">
 							<Radar
 								width={500}
 								height={500}
 								padding={70}
-								domainMax={500}
+								domainMax={10000}
 								highlighted={null}
 								data={{
 									variables: [

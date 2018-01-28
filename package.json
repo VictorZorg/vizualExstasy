@@ -17,6 +17,7 @@
   "author": "VizualExstasy",
   "license": "MIT",
   "dependencies": {
+    "@smartive/react-d3-radar": "^0.3.1",
     "d3-array": "^1.2.1",
     "d3-axis": "^1.0.8",
     "d3-brush": "^1.0.4",
@@ -30,6 +31,7 @@
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-d3-map-bubble": "^0.6.0",
+    "react-d3-radar": "^0.2.6",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
