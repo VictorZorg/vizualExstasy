@@ -15,6 +15,7 @@ import FactoryProductionContainer from './modules/factory_production/FactoryProd
 
 export default class App extends React.Component {
 	render() {
+		console.log("28 01 18");
 		return (
 			<div className="app-container">
 				<div className="content-container">
