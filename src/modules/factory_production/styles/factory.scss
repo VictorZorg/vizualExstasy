@@ -55,6 +55,7 @@
       flex: 1;
       a {
         font-weight: normal;
+        text-align: center;
       }
     }
 
@@ -84,6 +85,11 @@
       display: flex;
       flex: 1;
       box-sizing: border-box;
+      flex-flow: column;
+
+      .rose-header {
+        text-align: center;
+      }
     }
   }
 }

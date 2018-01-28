@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 import * as d3 from "d3";
-import up from "./up.png";
-import down from "./down.png";
 
 class CarTable extends Component {
 
@@ -23,22 +21,53 @@ class CarTable extends Component {
 		})
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
-		return this.state.cars !== nextProps.cars
-	}
-
 	componentDidUpdate() {
 		this.drawTable();
+	}
+
+//
+
+
+	sortTable(self, header, i) {
+		console.log(self)
+		d3.select("img").remove();
+
+		if (self.state.sort) {
+			self.setState({
+				sort: false
+			});
+			d3.select(this).append('img').attr('src', up);
+			d3.select(this).style("cursor", "n-resize");
+			tbody.selectAll("tr").sort(function (a, b) {
+				return d3.descending(a[header], b[header]);
+			}).style("background-color", function (d, i) {
+				if (i % 2 == 0) {
+					return "#D8D8D8";
+				}
+			});
+		}
+		else {
+			self.setState({
+				sort: true
+			});
+
+			d3.select(this).append('img').attr('src', down);
+			tbody.selectAll("tr").sort(function (a, b) {
+				return d3.ascending(a[header], b[header]);
+			}).style("background-color", function (d, i) {
+				if (i % 2 == 0) {
+					return "#D8D8D8";
+				}
+			});
+		}
 	}
 
 	drawTable() {
 		let self = this;
 		let data = this.state.cars;
 		const columns = Object.keys(data[0]);
-		let sort = self.state.sort;
 
 		if (d3.select(this.refs.arc).select("table")) {
-			console.log("Already exists")
 			d3.select(this.refs.arc).select("table").remove();
 		}
 
@@ -46,9 +75,6 @@ class CarTable extends Component {
 		let thead = table.append("thead")
 			.attr("class", "thead");
 		let tbody = table.append("tbody");
-
-		table.append("caption")
-			.html("Muscle Cars");
 
 		thead.append("tr").selectAll("th")
 			.data(columns)
@@ -58,32 +84,7 @@ class CarTable extends Component {
 				return d;
 			})
 			.on("click", function (header, i) {
-
-				d3.select("img").remove();
-				if (sort) {
-					sort = false;
-					d3.select(this).append('img').attr('src',down );
-					d3.select(this).style("cursor", "n-resize");
-					tbody.selectAll("tr").sort(function (a, b) {
-						return d3.descending(a[header], b[header]);
-					}).style("background-color", function (d, i) {
-						if (i % 2 == 0) {
-							return "#D8D8D8";
-						}
-					});
-				}
-				else {
-					sort = true;
-
-					d3.select(this).append('img').attr('src', up);
-					tbody.selectAll("tr").sort(function (a, b) {
-						return d3.ascending(a[header], b[header]);
-					}).style("background-color", function (d, i) {
-						if (i % 2 == 0) {
-							return "#D8D8D8";
-						}
-					});
-				}
+				self.sortTable(this, header, i);
 			});
 
 

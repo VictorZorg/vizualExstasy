@@ -29,6 +29,7 @@
     "node-sass": "^4.3.0",
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
+    "react-d3-map-bubble": "^0.6.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

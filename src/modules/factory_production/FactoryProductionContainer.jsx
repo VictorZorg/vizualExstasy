@@ -60,17 +60,19 @@ class FactoryProductionContainer extends React.Component {
 	 * @param factoryId - factory id
 	 */
 	chooseCurrentFactory(factoryId) {
+		console.log(factoryId)
 		//TODO: REMOVE!!! ==================================================================================================
-		if (factoryId === 0) {
-			factoryId = 1
+		if (factoryId == 0) {
+			this.chooseData(false)
+		} else {
+			let chosenFactory = this.state.factoryData[factoryId];
+			this.setState({
+				currentFactory: chosenFactory,
+				currentFactoryId: factoryId,
+			});
+			this.chooseQuote(chosenFactory);
+			this.chooseData(chosenFactory)
 		}
-		let chosenFactory = this.state.factoryData[factoryId];
-		this.setState({
-			currentFactory: chosenFactory,
-			currentFactoryId: factoryId,
-		});
-		this.chooseQuote(chosenFactory);
-		this.chooseData(chosenFactory)
 	}
 
 	/**
@@ -97,7 +99,6 @@ class FactoryProductionContainer extends React.Component {
 	 * @param factory
 	 */
 	chooseData(factory) {
-		let jsonName = factory.name.replace(/\s/g, '').toLowerCase();
 		//TODO: Change on another method!!! ==================================================================================================
 		// console.log(jsonName);
 		// console.log(this.state.allFactoryData[jsonName]);
@@ -110,11 +111,28 @@ class FactoryProductionContainer extends React.Component {
 		// 	.catch(function (error) {
 		// 		console.log(error);
 		// 	});
-		let newFactoryData = this.state.allFactoryData[jsonName];
-		this.setState({
-			currentCarsData: newFactoryData,
-		});
-		this.chooseCar(newFactoryData[0] ? newFactoryData[0] : [])
+
+		console.log("Choose data");
+		console.log("Factory: " + factory);
+		if (!factory) {
+			console.log("Choose total");
+			let totalData = [];
+			let stateData = Object.assign({}, this.state.allFactoryData);
+			Object.keys(stateData).map(factory => {
+				Array.prototype.push.apply(totalData, stateData[factory]);
+			});
+			this.setState({
+				currentCarsData: totalData
+			});
+			this.chooseCar(totalData[0] ? totalData[0] : [])
+		} else {
+			let jsonName = factory.name.replace(/\s/g, '').toLowerCase();
+			let newFactoryData = this.state.allFactoryData[jsonName];
+			this.setState({
+				currentCarsData: newFactoryData,
+			});
+			this.chooseCar(newFactoryData[0] ? newFactoryData[0] : [])
+		}
 
 	}
 
@@ -133,19 +151,21 @@ class FactoryProductionContainer extends React.Component {
 			"acceleration"
 		];
 		if (car) {
-			car["values"] = {};
+			let currentCarValues = Object.assign({}, car);
+			currentCarValues["values"] = {};
 			let value = 0;
 			carValueNames.map(name => {
 				value = car[name] ? car[name] : 0;
 				if (name === 'weight') {
 					value = value / 1000;
-				} else if (value < 100) {
-					value = value * 10
+					// } else if (value < 100) {
+					// 	value = value * 10
 				}
-				car.values[name] = value;
+				currentCarValues.values[name] = value;
 			});
 			this.setState({
 				currentCar: car,
+				currentCarValues: currentCarValues
 			})
 		}
 	}
@@ -208,26 +228,33 @@ class FactoryProductionContainer extends React.Component {
 						/>
 					</div>
 					<div className="factory-production-rose">
-						<Radar
-							width={500}
-							height={500}
-							padding={70}
-							domainMax={500}
-							highlighted={null}
-							data={{
-								variables: [
-									{key: 'mpg', label: 'Mpg '},
-									{key: 'cylinders', label: 'Cylinders '},
-									{key: 'displacement', label: 'Displacement '},
-									{key: 'horsepower', label: 'Horsepower '},
-									{key: 'weight', label: 'Weight'},
-									{key: 'acceleration', label: 'Acceleration '},
-								],
-								sets: [
-									this.state.currentCar
-								],
-							}}
-						/>
+						<div className="rose-header">
+							{
+								this.state.currentCar.model
+							}
+						</div>
+						<div className="rose">
+							<Radar
+								width={500}
+								height={500}
+								padding={70}
+								domainMax={500}
+								highlighted={null}
+								data={{
+									variables: [
+										{key: 'mpg', label: 'Mpg '},
+										{key: 'cylinders', label: 'Cylinders '},
+										{key: 'displacement', label: 'Displacement '},
+										{key: 'horsepower', label: 'Horsepower '},
+										{key: 'weight', label: 'Weight'},
+										{key: 'acceleration', label: 'Acceleration '},
+									],
+									sets: [
+										this.state.currentCarValues
+									],
+								}}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
