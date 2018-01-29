@@ -95,4 +95,32 @@
       }
     }
   }
+  .car-table-content {
+    width: 100%;
+    .table-container {
+      width: 100%;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    td,th {
+      border: 1px solid black;
+      text-align: center;
+      padding: 2px;
+    }
+
+  }
+
+  .column-name {
+    display: flex;
+    justify-content: center;
+    .column-content {
+      margin-left: 15px;
+    }
+  }
+
+  .column-name:nth-child(0) {
+    border-right: 2px darkred solid;
+  }
 }

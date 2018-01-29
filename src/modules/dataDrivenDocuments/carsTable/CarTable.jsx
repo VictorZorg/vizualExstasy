@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import * as d3 from "d3";
+import SortableTable from 'react-sortable-table';
 
 class CarTable extends Component {
 
@@ -129,12 +130,100 @@ class CarTable extends Component {
 	}
 
 	render() {
+		const columns = [
+			{
+				header: 'Id',
+				key: 'id',
+				defaultSorting: 'ASC',
+				headerProps: { className: 'align-left' },
+				headerStyle: { fontSize: '15px', backgroundColor: '#FFDAB9', width: '100px' },
+				dataStyle: { fontSize: '15px', backgroundColor: '#FFDAB9'},
+				dataProps: { className: 'align-right' }
+			},			{
+				header: 'Brand',
+				key: 'brand',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-center' },
+			},			{
+				header: 'Model',
+				key: 'model',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-center' },
+			},			{
+				header: 'Mpg',
+				key: 'mpg',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},			{
+				header: 'Cylinders',
+				key: 'cylinders',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},			{
+				header: 'Displacement',
+				key: 'displacement',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},			{
+				header: 'Horsepower',
+				key: 'horsepower',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},{
+				header: 'Weight',
+				key: 'weight',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},{
+				header: 'Acceleration',
+				key: 'acceleration',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},{
+				header: 'Year',
+				key: 'year',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			},{
+				header: 'Origin',
+				key: 'origin',
+				headerStyle: { fontSize: '15px' },
+				headerProps: { className: 'align-left' },
+			}
+		];
+
+		const style = {
+			backgroundColor: '#eee'
+		};
+
+		const iconStyle = {
+			color: '#aaa',
+			paddingLeft: '5px',
+			paddingRight: '5px'
+		};
+
+		let data =  [
+			{ id: 3, name: 'Satoshi Yamamoto', class: 'B' },
+			{ id: 1, name: 'Taro Tanak', class: 'A' },
+			{ id: 2, name: 'Ken Asada', class: 'A' },
+			{ id: 4, name: 'Masaru Tokunaga', class: 'C' }
+		]
+
 		return (
-			<div>
+			<div className="car-table-content">
 				<div ref="arc"></div>
+
 			</div>
 		)
 	}
 }
+//<div className="table-container">
+//	<SortableTable
+//		data={this.props.carData}
+//		columns={columns}
+//		style={style}
+//		iconStyle={iconStyle}
+//	/>
+//</div>
 
 export default CarTable

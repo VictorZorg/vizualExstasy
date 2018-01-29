@@ -218,6 +218,7 @@ class FactoryProductionContainer extends React.Component {
 				</div>
 				<div className="factory-header">
 					<div className="quote header-element">
+
 						{this.state.currentQuotation.text}
 					</div>
 					<div className="author header-element">
@@ -236,15 +237,21 @@ class FactoryProductionContainer extends React.Component {
 					</div>
 					<div className="factory-production-rose">
 						<div className="rose-header">
-							<div className="brand">
-								{
-									this.state.currentCar.brand
-								}
+							<div className="column-name">
+								Brand:
+								<div className="column-content">
+									{
+										this.state.currentCar.brand
+									}
+								</div>
 							</div>
-							<div className="model">
-								{
-									this.state.currentCar.model
-								}
+							<div className="column-name">
+								Model:
+								<div className="column-content">
+									{
+										this.state.currentCar.model
+									}
+								</div>
 							</div>
 
 						</div>

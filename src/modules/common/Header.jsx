@@ -10,7 +10,7 @@ class Header extends React.Component {
 			<div className="header">
 				<div className="header-link">
 					<Link to='/'>
-						Home
+						<img src={require('../../img/home.png')} />
 					</Link>
 				</div>
 				<div className="header-link">

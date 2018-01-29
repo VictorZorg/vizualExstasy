@@ -8,11 +8,10 @@ class MainContainer extends React.Component {
 			<div className="main-container">
 				<div className="greetings">
 					Welcome to VizualExstasy project!
-					<div className="logo">
-						<img src={require('../../img/max.png')}/>
-					</div>
 				</div>
-
+				<div className="logo">
+					<img src={require('../../img/logo.png')}/>
+				</div>
 			</div>
 		)
 	}
